@@ -1,0 +1,127 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/*NavBar */
+.navbar {
+  height: 4rem;
+  background-color: white;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important; /* navbar pe bootstarp ki css lg rhi h usko override krne k liye */
+}
+
+/*Footer */
+.f-info-link a {
+  text-decoration: none;
+  color: #222222;
+}
+.f-info-link a:hover {
+  text-decoration: underline;
+}
+
+.f-info-link,
+.f-info-social {
+  width: 100%;
+}
+
+.f-info-social i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.footer-info {
+  display: flex;
+  height: 8rem;
+  background-color: aliceblue;
+  flex-wrap: wrap; /*sara content ko differnt line m lane k liye */
+  justify-content: center; /* ye v sara content ko differnt line m lane k liye */
+  align-items: space-evenly; /*ye vsara content ko differnt line m lane k liye */
+  text-align: center; /* sara text ko center mai lane k liye */
+}
+
+/* Cards */
+
+.card-listings {
+  /* card ka border remove krne k liye*/
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  /* card ki default style ko over write kr ske */
+  border-radius: 1rem !important;
+  width: 100 !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none; /*anker tag se underline hatane k liye */
+}
+
+/*cards Efect */
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* Show Page */
+.show-img {
+  height: 30vh;
+  width: 50vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*filters */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+}
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.filter p {
+  font-size: 0.8rem;
+}

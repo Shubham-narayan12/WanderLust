@@ -1,0 +1,78 @@
+<% layout("/layout/boilerplate") %>
+<style></style>
+<body>
+  <div class="filters">
+    <div class="filter">
+      <i class="fa-solid fa-fire"></i>
+      <p>trending</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-bed"></i>
+      <p>rooms</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-mountain-city"></i>
+      <p>mountains</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-person-swimming"></i>
+      <p>pool</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-snowflake"></i>
+      <p>snow</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-campground"></i>
+      <p>camping</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-tractor"></i>
+      <p>farms</p>
+    </div>
+    <div class="filter">
+      <i class="fa-brands fa-fort-awesome"></i>
+      <p>castles</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-ship"></i>
+      <p>sea face</p>
+    </div>
+
+    <div class="filter">
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row row-cols-lg-4">
+    <%for(let user of allListing){ %>
+    <a href="/listings/<%=user._id %>" class="listing-link">
+      <div class="card card-listings">
+        <img
+          src="<%= user.image.url %>"
+          class="card-img-top"
+          alt="listing_image"
+          style="height: 20rem"
+        />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= user.title %> </b><br />
+            &#8377;<%=user.price.toLocaleString("en-IN")%>/night
+            <!--.toLocaleString("en-IN")-->
+          </p>
+        </div>
+      </div>
+    </a>
+
+    <% } %>
+  </div>
+</body>
