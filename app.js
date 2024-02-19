@@ -44,7 +44,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const store = MongoStore.create({
+/*const store = MongoStore.create({
   mongoUrl: dbUrl,
   crypto: {
     secret: process.env.SECRET,
@@ -54,10 +54,10 @@ const store = MongoStore.create({
 
 store.on("error", () => {
   console.log("ERROR in MONGO SESSSION", err);
-}); 
+});  */
 
 const sessionOptions = {
-  store,
+  //store,
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
