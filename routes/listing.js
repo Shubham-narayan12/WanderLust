@@ -84,6 +84,7 @@ router.get(
       req.flash("error", "Listing Does not Exist");
       res.redirect("/listings");
     }
+    console.log(newData);
     res.render("edit.ejs", { newData });
   })
 );
@@ -98,10 +99,10 @@ router.patch(
     let { id } = req.params;
     let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
 
-    if(typeof req.file != "undefined"){
+    if (typeof req.file != "undefined") {
       let url = req.file.path;
       let filename = req.file.filename;
-      listing.image = {url,filename};
+      listing.image = { url, filename };
       await listing.save();
     }
     req.flash("success", "Edit Successfull");
@@ -119,6 +120,24 @@ router.delete(
     await Listing.findByIdAndDelete(id);
     req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
+  })
+);
+
+//to Resever the hostel
+router.get(
+  "/reserve/:id", isLoggedIn,
+  wrapAsync(async (req, res) => {
+    let { id } = req.params;
+    let listing = await Listing.findById(id);
+    res.render("reserve.ejs", { listing });
+  })
+);
+
+//show booking status
+router.get(
+  "/booking",
+  wrapAsync(async (req, res) => {
+    res.render("bookingStatus.ejs")
   })
 );
 

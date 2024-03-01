@@ -44,7 +44,7 @@
         <input
           class="form-control me-2"
           type="search"
-          placeholder="Search"
+          placeholder="Search Place"
           aria-label="Search"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -66,7 +66,9 @@
         <div class="card-body">
           <p class="card-text">
             <b><%= user.title %> </b><br />
+            <%= user.location %> <br />
             &#8377;<%=user.price.toLocaleString("en-IN")%>/night
+
             <!--.toLocaleString("en-IN")-->
           </p>
         </div>

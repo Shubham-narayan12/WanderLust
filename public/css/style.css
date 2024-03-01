@@ -125,3 +125,9 @@ body {
 .filter p {
   font-size: 0.8rem;
 }
+
+.border {
+  padding: 0;
+  border-inline-style: black;
+  border-radius: 1rem;
+}

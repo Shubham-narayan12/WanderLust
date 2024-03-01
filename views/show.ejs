@@ -1,6 +1,5 @@
 <% layout("/layout/boilerplate") %>
 
-
 <div class="row mt-2">
   <div class="col-8 offset-3">
     <h3><b><%= thisData.title %></b></h3>
@@ -34,8 +33,14 @@
       </ul>
     </div>
   </div>
+  <div class="book">
+    <form method="GET" action="/reserve/<%= thisData._id %>">
+      <button class="btn-danger btn mb-2 offset-3">Reserve</button>
+    </form>
+  </div>
 
   <div class="row">
+    <% if(crntUser && crntUser._id.equals(thisData.owner._id)) { %>
     <div class="col-8 offset-3">
       <div class="btns">
         <form method="GET" action="/edit/<%=thisData._id %>">
@@ -47,6 +52,8 @@
         </form>
       </div>
     </div>
+    <% } %>
+
     <div class="col-7 offset-3 mb-3">
       <hr />
       <h4>Leave a Review</h4>
